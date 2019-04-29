@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://leaflet.github.io/Leaflet.draw/docs/examples/full.html -->
+<html class="gr__leaflet_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Leaflet.draw vector editing handlers</title>
+
+    <script src="./Leaflet.draw vector editing handlers_files/leaflet-src.js"></script>
+    <link rel="stylesheet" href="./Leaflet.draw vector editing handlers_files/leaflet.css">
+
+    <script src="./Leaflet.draw vector editing handlers_files/Leaflet.draw.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Leaflet.Draw.Event.js"></script>
+    <link rel="stylesheet" href="./Leaflet.draw vector editing handlers_files/leaflet.draw.css">
+
+    <script src="./Leaflet.draw vector editing handlers_files/Toolbar.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Tooltip.js"></script>
+
+    <script src="./Leaflet.draw vector editing handlers_files/GeometryUtil.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/LatLngUtil.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/LineUtil.Intersect.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Polygon.Intersect.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Polyline.Intersect.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/TouchEvents.js"></script>
+
+    <script src="./Leaflet.draw vector editing handlers_files/DrawToolbar.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.Feature.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.SimpleShape.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.Polyline.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.Marker.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.Circle.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.CircleMarker.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.Polygon.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Draw.Rectangle.js"></script>
+
+
+    <script src="./Leaflet.draw vector editing handlers_files/EditToolbar.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/EditToolbar.Edit.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/EditToolbar.Delete.js"></script>
+
+    <script src="./Leaflet.draw vector editing handlers_files/Control.Draw.js"></script>
+
+    <script src="./Leaflet.draw vector editing handlers_files/Edit.Poly.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Edit.SimpleShape.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Edit.Rectangle.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Edit.Marker.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Edit.CircleMarker.js"></script>
+    <script src="./Leaflet.draw vector editing handlers_files/Edit.Circle.js"></script>
+</head>
+<body data-gr-c-s-loaded="true" class="">
+<div id="map" style="width: 800px; height: 600px; border: 1px solid rgb(204, 204, 204); position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(1044.09px, 563.715px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(646px, 330px, 0px) scale(1);"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10894.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1694px, -412px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10894(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1438px, -412px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10894(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1182px, -412px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10894(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-926px, -412px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10893.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1438px, -668px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10893(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1182px, -668px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10892.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1438px, -924px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10892(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1182px, -924px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10893(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1694px, -668px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10893(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-926px, -668px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10892(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-1694px, -924px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Leaflet.draw vector editing handlers_files/10892(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-926px, -924px, 0px); opacity: 1;"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(0px, 0px, 0px) scale(2);"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"><div class="leaflet-draw-guides"></div><svg pointer-events="none" class="leaflet-zoom-animated" width="960" height="720" viewBox="-1124 -624 960 720" style="transform: translate3d(-1124px, -624px, 0px);"><g><path class="leaflet-interactive" stroke="#3388ff" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="#3388ff" fill-opacity="0.2" fill-rule="evenodd" d="M-844 -364L-594 -457L-473 -269L-606 -95L-801 -177z" style="
+    position: fixed;
+"></path></g></svg></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(4.19112e+06px, 2.78868e+06px, 0px) scale(16384);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div><div class="leaflet-control-layers leaflet-control-layers-expanded leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Layers"></a><form class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> osm</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> google</span></div></label></div><div class="leaflet-control-layers-separator"></div><div class="leaflet-control-layers-overlays"><label><div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span> drawlayer</span></div></label></div></form></div><div class="leaflet-draw leaflet-control"><div class="leaflet-draw-section"><div class="leaflet-draw-toolbar leaflet-bar leaflet-draw-toolbar-top"><a class="leaflet-draw-draw-polyline" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Draw a polyline"><span class="sr-only">Draw a polyline</span></a><a class="leaflet-draw-draw-polygon" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Draw a polygon"><span class="sr-only">Draw a polygon</span></a><a class="leaflet-draw-draw-rectangle" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Draw a rectangle"><span class="sr-only">Draw a rectangle</span></a><a class="leaflet-draw-draw-circle" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Draw a circle"><span class="sr-only">Draw a circle</span></a><a class="leaflet-draw-draw-marker" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Draw a marker"><span class="sr-only">Draw a marker</span></a><a class="leaflet-draw-draw-circlemarker" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Draw a circlemarker"><span class="sr-only">Draw a circlemarker</span></a></div><ul class="leaflet-draw-actions" style="top: 32px; display: none;"><li class=""><a class="" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Finish drawing">Finish</a></li><li class=""><a class="" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Delete last point drawn">Delete last point</a></li><li class=""><a class="" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Cancel drawing">Cancel</a></li></ul></div><div class="leaflet-draw-section"><div class="leaflet-draw-toolbar leaflet-bar"><a class="leaflet-draw-edit-edit" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Edit layers"><span class="sr-only">Edit layers</span></a><a class="leaflet-draw-edit-remove" href="http://leaflet.github.io/Leaflet.draw/docs/examples/full.html#" title="Delete layers"><span class="sr-only">Delete layers</span></a></div><ul class="leaflet-draw-actions"></ul></div></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | © <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors</div></div></div></div>
+
+<script>
+    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }),
+            map = new L.Map('map', { center: new L.LatLng(51.505, -0.04), zoom: 13 }),
+            drawnItems = L.featureGroup().addTo(map);
+    L.control.layers({
+        'osm': osm.addTo(map),
+        "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
+            attribution: 'google'
+        })
+    }, { 'drawlayer': drawnItems }, { position: 'topleft', collapsed: false }).addTo(map);
+    map.addControl(new L.Control.Draw({
+        edit: {
+            featureGroup: drawnItems,
+            poly: {
+                allowIntersection: false
+            }
+        },
+        draw: {
+            polygon: {
+                allowIntersection: false,
+                showArea: true
+            }
+        }
+    }));
+
+    map.on(L.Draw.Event.CREATED, function (event) {
+        var layer = event.layer;
+
+        drawnItems.addLayer(layer);
+    });
+
+</script>
+
+
+</body></html>

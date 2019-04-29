@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+      <style>
+      #mapid { height: 400px; }
+      @keyframes stroke {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive{
+        stroke-dasharray: 16 10;
+        stroke-dasharray: 4px;
+        stroke-dashoffset: 8px;
+        animation: stroke 0.2s linear infinite;
+      }
+      </style>
+<body>
+   <div id="mapid"></div>
+   <script>
+
+
+   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2hlbGxhZHVyYWk4OSIsImEiOiJjamEwMHgyaW4xbjkyMnFxcjk3Mjh6M3dsIn0.JjOP8BJCTSr9eMUcM-1UXg', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+var drawnItems = new L.FeatureGroup();
+     mymap.addLayer(drawnItems);
+     var drawControl = new L.Control.Draw({
+         edit: {
+             featureGroup: drawnItems
+         }
+     });
+     mymap.addControl(drawControl);
+
+
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
+var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]
+]).addTo(mymap);
+//mymap.addLayer(drawnItems);
+mymap.on('draw:created', function (e) {
+   var type = e.layerType,
+       layer = e.layer;
+   if (type === 'marker') {
+       // Do marker specific actions
+   }
+   //debugger;
+   // Do whatever else you need to. (save to db; add to map etc)
+   mymap.addLayer(layer);
+});
+   </script>
+</body>
